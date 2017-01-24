@@ -17,19 +17,19 @@ public class CointTest {
 
 	@Test
 	public void testGetFromIndex() {
-		int oneSolution = this.changer.getFromIndex(0, 10);
+		long oneSolution = this.changer.getFromIndex(0, 10);
 		assertEquals(1, oneSolution);
 		
-		int twoSolutions = this.changer.getFromIndex(1, 6);
+		long twoSolutions = this.changer.getFromIndex(1, 6);
 		assertEquals(2, twoSolutions);
 		
-		int fiveSolutions = this.changer.getFromIndex(3, 10);
+		long fiveSolutions = this.changer.getFromIndex(3, 10);
 		assertEquals(5, fiveSolutions);
 	}
 	
 	@Test
 	public void testGetCombinations() {
-		int five = this.changer.getCombinations();
+		long five = this.changer.getCombinations();
 		assertEquals(5, five);
 	}
 

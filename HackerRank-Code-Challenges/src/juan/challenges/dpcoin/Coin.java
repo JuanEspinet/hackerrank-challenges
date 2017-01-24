@@ -1,12 +1,9 @@
 package juan.challenges.dpcoin;
 
-import java.awt.RenderingHints.Key;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -28,6 +25,7 @@ public class Coin {
         }
         CoinChanger changer = new CoinChanger(coins, n);
         System.out.println(changer.getCombinations());
+        in.close();
     }
 }
 
@@ -44,7 +42,7 @@ class CoinChanger {
 	 * Hashmap for storing already computed solutions.
 	 * 
 	 */
-	HashMap<SolvedKey, Integer> solved;
+	HashMap<SolvedKey, Long> solved;
 	
 	/**
 	 * The set of "coin" values used to make "change"
@@ -60,14 +58,14 @@ class CoinChanger {
 		this.coins = new ArrayList<Integer>(Arrays.asList(coins));
 		Collections.sort(this.coins);
 		this.dollars = dollars;
-		this.solved = new HashMap<SolvedKey, Integer>();
+		this.solved = new HashMap<SolvedKey, Long>();
 	}
 	
-	public int getCombinations() {
+	public long getCombinations() {
 		return getFromIndex(this.coins.size() - 1, this.dollars);
 	}
 	
-	public int getFromIndex(int coinIndex, int dollarTotal) {
+	public long getFromIndex(int coinIndex, int dollarTotal) {
 		// invalid combination, no solutions
 		if (coinIndex < 0 || dollarTotal < 0) {
 			return 0;
@@ -88,7 +86,7 @@ class CoinChanger {
 		int coinVal = coins.get(coinIndex);
 		
 		// continue running down branches
-		int combos = getFromIndex(coinIndex - 1, dollarTotal) + getFromIndex(coinIndex, dollarTotal - coinVal);
+		long combos = getFromIndex(coinIndex - 1, dollarTotal) + getFromIndex(coinIndex, dollarTotal - coinVal);
 		// save this solution
 		this.solved.put(key, combos);
 		

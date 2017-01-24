@@ -9,9 +9,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-import org.junit.experimental.theories.Theories;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 /**
  * Challenge description at https://www.hackerrank.com/challenges/ctci-coin-change
  * 
@@ -25,10 +22,12 @@ public class Coin {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int m = in.nextInt();
-        int coins[] = new int[m];
+        Integer coins[] = new Integer[m];
         for(int coins_i=0; coins_i < m; coins_i++){
             coins[coins_i] = in.nextInt();
         }
+        CoinChanger changer = new CoinChanger(coins, n);
+        System.out.println(changer.getCombinations());
     }
 }
 

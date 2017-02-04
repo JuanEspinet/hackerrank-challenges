@@ -24,6 +24,8 @@ public class Solution {
         NumberGrid gridSearch = new NumberGrid(grid);
         
         System.out.println(gridSearch.largestRegion());
+        
+        in.close();
     }
 }
 

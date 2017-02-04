@@ -304,10 +304,10 @@ class Vertex {
 	}
 	
 	/**
-	 * Gets an iterator for all edges
+	 * Gets an iterator for all edge numbers
 	 * adjacent to this vertex.
 	 * 
-	 * @return Iterator or null no adjacent edges
+	 * @return Iterator of Integers
 	 */
 	public Iterator<Integer> getEdgeIterator() {
 		return this.edges.iterator();

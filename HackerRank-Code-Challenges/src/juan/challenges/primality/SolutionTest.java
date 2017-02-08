@@ -14,12 +14,12 @@ public class SolutionTest {
 	@Test
 	public void testIsPrime() {
 		assertTrue(Solution.isPrime(2));
-//		assertTrue(Solution.isPrime(5));
-//		assertFalse(Solution.isPrime(12));
-//		assertTrue(Solution.isPrime(17));
-//		assertFalse(Solution.isPrime(15));
-//		assertTrue(Solution.isPrime(23));
-//		assertFalse(Solution.isPrime(49));
-//		assertFalse(Solution.isPrime(979));
+		assertTrue(Solution.isPrime(5));
+		assertFalse(Solution.isPrime(12));
+		assertTrue(Solution.isPrime(17));
+		assertFalse(Solution.isPrime(15));
+		assertTrue(Solution.isPrime(23));
+		assertFalse(Solution.isPrime(49));
+		assertFalse(Solution.isPrime(979));
 	}
 }

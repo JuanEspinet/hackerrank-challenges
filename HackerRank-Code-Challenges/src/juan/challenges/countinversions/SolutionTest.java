@@ -2,6 +2,8 @@ package juan.challenges.countinversions;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,8 +17,8 @@ public class SolutionTest {
 	@Before
 	public void setUp() throws Exception {
 		array1 = new int[]{1, 3, 7, 5, 2, 4, 6};
-		int leftStart = 0;
-		int rightEnd = array1.length - 1;
+		leftStart = 0;
+		rightEnd = array1.length - 1;
 	}
 
 	@Test

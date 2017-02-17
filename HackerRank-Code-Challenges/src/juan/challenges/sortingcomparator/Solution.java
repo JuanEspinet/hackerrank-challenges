@@ -51,7 +51,7 @@ class Solution {
 }
 
 /**
- * This is the solution
+ * This is the solution I wrote
  * 
  * @author juanespinet
  *
@@ -61,14 +61,35 @@ class Checker implements Comparator<Player> {
 	@Override
 	public int compare(Player o1, Player o2) {
 		if (o1.score == o2.score) {
-			
+			return compareAlpha(o1, o2);
 		}
 		
-		return 0;
+		return o2.score - o1.score;
 	}
 	
-	
+	/**
+	 * Compares the name properties for two player
+	 * instances and returns a value indicating their
+	 * alphabetical ordering.
+	 * 
+	 * @param o1
+	 * @param o2
+	 * @return int
+	 */
 	public int compareAlpha(Player o1, Player o2) {
-		return 0;
+		// compare characters in order until a mismatch is found
+		for (int i = 0; i < o1.name.length() && i < o2.name.length(); i++) {
+			char c1 = o1.name.charAt(i);
+			char c2 = o2.name.charAt(i);
+			
+			if (c1 != c2) {
+				// found a character difference, determine order
+				return (int) (c1 - c2);
+			}
+		}
+		
+		// reached the end of at least one word with no character mismatches
+		// compare length
+		return o1.name.length() - o2.name.length();
 	}
 }

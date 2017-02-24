@@ -4,10 +4,15 @@ import java.util.Stack;
 
 public class MyQueue<T> {
 	
-	protected Stack<Integer> inStack;
-	protected Stack<Integer> outStack;
+	protected Stack<T> inStack;
+	protected Stack<T> outStack;
 
-	public void enqueue(int nextInt) {
+	public MyQueue() {
+		this.inStack = new Stack<T>();
+		this.outStack = new Stack<T>();
+	}
+
+	public void enqueue(T next) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -17,9 +22,17 @@ public class MyQueue<T> {
 		
 	}
 
-	public int peek() {
+	public T peek() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
+	}
+	
+	/**
+	 * Checks if the out stack is empty
+	 * and refills from the in stack if so.
+	 */
+	protected void refillOut() {
+		
 	}
 
 }

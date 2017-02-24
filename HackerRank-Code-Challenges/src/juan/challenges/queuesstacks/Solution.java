@@ -1,11 +1,12 @@
 package juan.challenges.queuesstacks;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
+/**
+ * The code below was provided in the challenge setup,
+ * and not part of the solution authored by me.
+ *
+ */
 public class Solution {
     public static void main(String[] args) {
         MyQueue<Integer> queue = new MyQueue<Integer>();

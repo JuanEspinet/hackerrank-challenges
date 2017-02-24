@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Solution to bubble sort swap counting challenge from: https://www.hackerrank.com/challenges/ctci-bubble-sort
  * 
- * Bubble sort algorithm provided by challenge description and modified to allow counting total swaps.
+ * Bubble sort algorithm provided by challenge description and modified to optimize and allow counting total swaps.
  * 
  */
 public class Solution {
@@ -25,7 +25,7 @@ public class Solution {
             // Track number of elements swapped during a single array traversal
             int numberOfSwaps = 0;
             
-            for (int j = 0; j < n - 1; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 // Swap adjacent elements if they are in decreasing order
                 if (a[j] > a[j + 1]) {
                     swap(j, j + 1, a);

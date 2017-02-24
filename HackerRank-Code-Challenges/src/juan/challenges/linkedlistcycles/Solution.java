@@ -1,6 +1,5 @@
 package juan.challenges.linkedlistcycles;
 
-import java.sql.Struct;
 import java.util.HashSet;
 
 /**

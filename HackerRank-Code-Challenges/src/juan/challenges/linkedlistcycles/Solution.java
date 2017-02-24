@@ -3,7 +3,7 @@ package juan.challenges.linkedlistcycles;
 import java.util.HashSet;
 
 /**
- * Solution to hackerrank challenge found at:
+ * Solution to hackerrank challenge found at: https://www.hackerrank.com/challenges/ctci-linked-list-cycle
  * @author juanespinet
  *
  */

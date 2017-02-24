@@ -1,5 +1,6 @@
 package juan.challenges.queuesstacks;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class MyQueue<T> {
@@ -12,27 +13,49 @@ public class MyQueue<T> {
 		this.outStack = new Stack<T>();
 	}
 
+	/**
+	 * Adds an item to the end of the queue;
+	 * 
+	 * @param next
+	 */
 	public void enqueue(T next) {
-		// TODO Auto-generated method stub
-		
+		this.inStack.push(next);
 	}
 
+	/**
+	 * Removes the item from the head of the queue;
+	 */
 	public void dequeue() {
-		// TODO Auto-generated method stub
-		
+		// check if out is empty and refill if so
+		refillOutIfEmpty();
+		// remove the last item from the out stack
+		try {
+			this.outStack.pop();
+		} catch (EmptyStackException e) {
+			// do nothing
+		}
 	}
 
 	public T peek() {
-		// TODO Auto-generated method stub
-		return null;
+		// check if out is empty and refill if so
+		refillOutIfEmpty();
+		// attempt to look at the first item
+		try {
+			return this.outStack.peek();
+		} catch (EmptyStackException e) {
+			return null;
+		}
 	}
 	
 	/**
 	 * Checks if the out stack is empty
 	 * and refills from the in stack if so.
 	 */
-	protected void refillOut() {
-		
+	protected void refillOutIfEmpty() {
+		if (this.outStack.empty()) {
+			while (!this.inStack.empty()) {
+				this.outStack.push(this.inStack.pop());
+			}
+		}
 	}
-
 }

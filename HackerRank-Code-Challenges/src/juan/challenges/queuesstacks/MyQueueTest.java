@@ -71,13 +71,13 @@ public class MyQueueTest {
 	
 	@Test
 	public void testRefillOut() {
-		testQueue.refillOut();
+		testQueue.refillOutIfEmpty();
 		
 		assertEquals(1, testQueue.inStack.size());
 		assertEquals(1, testQueue.outStack.size());
 		
 		testQueue.outStack.pop();
-		testQueue.refillOut();
+		testQueue.refillOutIfEmpty();
 		
 		assertEquals(0, testQueue.inStack.size());
 		assertEquals(1, testQueue.outStack.size());
@@ -86,7 +86,7 @@ public class MyQueueTest {
 		for (int i = 0; i < 100; i++) {
 			testQueue.inStack.push(rand.nextInt(10000));
 		}
-		testQueue.refillOut();
+		testQueue.refillOutIfEmpty();
 		
 		assertEquals(0, testQueue.inStack.size());
 		assertEquals(100, testQueue.outStack.size());
